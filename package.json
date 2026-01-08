@@ -1,0 +1,12 @@
+{
+  "name": "com.lumos.firebase",
+  "version": "1.0.0",
+  "displayName": "Lumos Firebase",
+  "description": "description",
+  "unity": "2021.2",
+  "author": {
+    "name": "Lumos",
+    "email": "lumos5934@gmail.com",
+    "url": ""
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Lumos.Firebase.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "Firebase.App",
+        "Firebase.Auth",
+        "Firebase.Firestore",
+        "LumosLib.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
