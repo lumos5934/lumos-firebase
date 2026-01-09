@@ -1,7 +1,11 @@
 {
     "name": "Lumos.Firebase.Editor",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "LumosLib.Editor",
+        "LumosLib.Runtime",
+        "Lumos.Firebase.Runtime"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

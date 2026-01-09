@@ -5,7 +5,9 @@
         "Firebase.App",
         "Firebase.Auth",
         "Firebase.Firestore",
-        "LumosLib.Runtime"
+        "LumosLib.Runtime",
+        "UniTask",
+        "TriInspector"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
