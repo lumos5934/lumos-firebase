@@ -5,7 +5,7 @@ using UnityEngine;
 namespace LumosLib.Firebase
 {
     [CreateAssetMenu(menuName = "SO/Auth Provider/Firebase/Anonymous", fileName = "Firebase_AnonymousAuthProvider")]
-    public class AnonymousBaseAuthProvider : BaseAuthProvider
+    public class AnonymousAuthProvider : BaseAuthProvider
     {
         protected override async UniTask<FirebaseUser> GetSignInUserAsync()
         {
