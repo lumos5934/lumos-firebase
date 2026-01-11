@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using Firebase.Firestore;
 using UnityEngine;
 
-namespace Lumos.Firebase
+namespace LumosLib.Firebase
 {
     [CreateAssetMenu(fileName = "Firestore_DataSource", menuName = "SO/Data Source/Firestore")]
     public class FirestoreDataSource : BaseDataSource

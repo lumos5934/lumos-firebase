@@ -1,7 +1,7 @@
 ﻿using Firebase.Auth;
 using Firebase.Firestore;
 
-namespace Lumos.Firebase
+namespace LumosLib.Firebase
 {
     public interface IFirebaseManager
     {
