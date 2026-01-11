@@ -19,8 +19,8 @@ namespace LumosLib.Firebase
         #endregion
         #region >--------------------------------------------------- FIELD
         
-       
-        [SerializeField] private BaseAuthService[] _authServices;
+        
+        [SerializeField] private BaseAuthProvider[] firebaseAuthProvider;
         
         
         #endregion
@@ -39,12 +39,6 @@ namespace LumosLib.Firebase
             Auth = FirebaseAuth.DefaultInstance;
             DB = FirebaseFirestore.DefaultInstance;
 
-
-            foreach (var service in _authServices)
-            {
-                service.Init(this);
-            }
-            
             GlobalService.Register(this);
             return await UniTask.FromResult(true);
         }
@@ -54,16 +48,16 @@ namespace LumosLib.Firebase
         #region >--------------------------------------------------- GET & SET
 
 
-        public T GetAuthService<T>() where T : BaseAuthService
+        public BaseAuthProvider GetAuthProvider<T>() where T : BaseAuthProvider
         {
-            foreach (var service in _authServices)
+            foreach (var provider in firebaseAuthProvider)
             {
-                if (service is T tService)
+                if (provider is T t)
                 {
-                    return tService;
+                    return t;
                 }
             }
-            
+
             return null;
         }
 
@@ -75,6 +69,8 @@ namespace LumosLib.Firebase
 
         #endregion
         #region >--------------------------------------------------- SIGN
+
+
         
         /*private async UniTask GoogleAutoSignIn(string webClientId)
         {

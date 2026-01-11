@@ -5,21 +5,23 @@ using UnityEngine;
 
 namespace LumosLib.Firebase
 {
-    [CreateAssetMenu(menuName = "Scriptable Objects/Firebase/Auth Service/Email", fileName = "EmailAuthService")]
-    public class EmailAuthService : BaseAuthService
+    [CreateAssetMenu(menuName = "SO/Auth Provider/Firebase/Email", fileName = "Firebase_EmailAuthProvider")]
+    public class EmailAuthProvider : BaseAuthProvider
     {
         [field: SerializeField] public string Email { get; private set; }
         [field: SerializeField] public string Password { get; private set; }
         
         [SerializeField] private bool _useAutoSignUp;
 
-        private AuthResult _authResult;
 
-        public override async UniTask SignInAsync()
+        protected override async UniTask<FirebaseUser> GetSignInUserAsync()
         {
+            FirebaseUser user = null;
+            
             try
             {
-                _authResult = await _manager.Auth.SignInWithEmailAndPasswordAsync(Email, Password);
+                var result = await Manager.Auth.SignInWithEmailAndPasswordAsync(Email, Password);
+                user = result.User;
             }
             catch (FirebaseException e)
             {
@@ -27,29 +29,23 @@ namespace LumosLib.Firebase
                 {
                     try
                     {
-                        await SignUpAsync();
+                        user = await SignUpAsync(Manager);
                     }
                     catch (FirebaseException signUpError)
                     {
                         DebugUtil.LogError($"SignUp : {signUpError.Message}", "Fail");
-                        return;
+                        return user;
                     }
                 }
             }
         
-            DebugUtil.Log("SignIn", "Success");
-            _manager.SetUser(_authResult.User);
+            return user;
         }
 
-        public override async UniTask SignUpAsync()
+        public async UniTask<FirebaseUser> SignUpAsync(FirebaseManager manager)
         {
-            _authResult = await _manager.Auth.CreateUserWithEmailAndPasswordAsync(Email, Password);
-        }
-        
-        public override UniTask SignOutAsync()
-        {
-            _manager.Auth.SignOut();
-            return UniTask.CompletedTask;
+            var result = await manager.Auth.CreateUserWithEmailAndPasswordAsync(Email, Password);
+            return result.User;
         }
     }
 }
