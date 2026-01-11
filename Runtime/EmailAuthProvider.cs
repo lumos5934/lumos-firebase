@@ -3,7 +3,7 @@ using Firebase;
 using Firebase.Auth;
 using UnityEngine;
 
-namespace LumosLib.Firebase
+namespace Lumos.Firebase
 {
     [CreateAssetMenu(menuName = "SO/Auth Provider/Firebase/Email", fileName = "Firebase_EmailAuthProvider")]
     public class EmailAuthProvider : BaseAuthProvider
@@ -29,7 +29,7 @@ namespace LumosLib.Firebase
                 {
                     try
                     {
-                        user = await SignUpAsync(Manager);
+                        user = await SignUpAsync();
                     }
                     catch (FirebaseException signUpError)
                     {
@@ -42,9 +42,9 @@ namespace LumosLib.Firebase
             return user;
         }
 
-        public async UniTask<FirebaseUser> SignUpAsync(FirebaseManager manager)
+        public async UniTask<FirebaseUser> SignUpAsync()
         {
-            var result = await manager.Auth.CreateUserWithEmailAndPasswordAsync(Email, Password);
+            var result = await Manager.Auth.CreateUserWithEmailAndPasswordAsync(Email, Password);
             return result.User;
         }
     }

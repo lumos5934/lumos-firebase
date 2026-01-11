@@ -2,7 +2,7 @@
 using Firebase.Auth;
 using UnityEngine;
 
-namespace LumosLib.Firebase
+namespace Lumos.Firebase
 {
     [CreateAssetMenu(menuName = "SO/Auth Provider/Firebase/Anonymous", fileName = "Firebase_AnonymousAuthProvider")]
     public class AnonymousBaseAuthProvider : BaseAuthProvider

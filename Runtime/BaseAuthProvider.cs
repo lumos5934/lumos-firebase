@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using Firebase.Auth;
 using UnityEngine;
 
-namespace LumosLib.Firebase
+namespace Lumos.Firebase
 {
     public abstract class BaseAuthProvider : ScriptableObject
     {

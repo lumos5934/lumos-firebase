@@ -4,9 +4,9 @@ using Firebase.Auth;
 using Firebase.Firestore;
 using UnityEngine;
 
-namespace LumosLib.Firebase
+namespace Lumos.Firebase
 {
-    public class FirebaseManager : MonoBehaviour, IPreInitializable
+    public class FirebaseManager : MonoBehaviour, IPreInitializable, IFirebaseManager
     {
         #region >--------------------------------------------------- PROPERTIES
 
@@ -39,7 +39,7 @@ namespace LumosLib.Firebase
             Auth = FirebaseAuth.DefaultInstance;
             DB = FirebaseFirestore.DefaultInstance;
 
-            GlobalService.Register(this);
+            GlobalService.Register<IFirebaseManager>(this);
             return await UniTask.FromResult(true);
         }
         
@@ -67,46 +67,6 @@ namespace LumosLib.Firebase
         }
         
 
-        #endregion
-        #region >--------------------------------------------------- SIGN
-
-
-        
-        /*private async UniTask GoogleAutoSignIn(string webClientId)
-        {
-            var configuration = new GoogleSignInConfiguration
-            {
-                WebClientId = webClientId,
-                RequestEmail = true,
-                RequestIdToken = true
-            };
-            GoogleSignIn.Configuration = configuration;
-
-            try
-            {
-                var googleUser = await GoogleSignIn.DefaultInstance.SignIn();
-                if (googleUser == null)
-                {
-                    
-                    DebugUtil.LogError("SignIn : Google User is null", "Fail");
-                    return;
-                }
-
-                string idToken = googleUser.IdToken;
-                var credential = GoogleAuthProvider.GetCredential(idToken, null);
-                User = await Auth.SignInWithCredentialAsync(credential);
-            }
-            catch (Exception e)
-            {
-                DebugUtil.LogError("SignIn :" + e.Message, "Fail");
-                GoogleSignIn.DefaultInstance.SignOut();
-                return;
-            }
-            
-            DebugUtil.Log("SignIn", "Success");
-        }*/
-        
-        
         #endregion
     }
 }
