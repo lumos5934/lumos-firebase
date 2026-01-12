@@ -39,7 +39,7 @@ namespace LumosLib.Firebase
             Auth = FirebaseAuth.DefaultInstance;
             DB = FirebaseFirestore.DefaultInstance;
 
-            GlobalService.Register<IFirebaseManager>(this);
+            GlobalService.Register((IFirebaseManager)this);
             return await UniTask.FromResult(true);
         }
         
