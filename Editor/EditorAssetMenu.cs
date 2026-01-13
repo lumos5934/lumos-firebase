@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 
-namespace LumosLib.Firebase
+namespace LumosLib.Firebase.Editor
 {
     public static class EditorAssetMenu
     {
@@ -10,7 +10,7 @@ namespace LumosLib.Firebase
         [MenuItem("Assets/Create/Prefab/Manager/Firebase", false, int.MinValue)]
         public static void CreateFirebaseManager()
         {
-            LumosLib.EditorAssetMenu.CreatePrefab<FirebaseManager>();
+            LumosLib.Editor.EditorAssetMenu.CreatePrefab<FirebaseManager>();
         }
         
         #endregion
