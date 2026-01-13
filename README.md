@@ -11,3 +11,5 @@ firebase 에 대한 활용 편의 패키지
 <br>
 
 ## ℹ️기능
+* [ Auth Provider ](https://www.notion.so/Auth-Provider-2e73966a742c806ba63dcef979af14f4)
+* [ Firestore ](https://www.notion.so/FireStore-2e73966a742c80328f00eef444374c65)
