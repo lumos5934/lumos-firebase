@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LumosLib.Firebase
 {
-    [CreateAssetMenu(fileName = "Firestore_DataSource", menuName = "SO/Data Source/Firestore")]
+    [CreateAssetMenu(fileName = "Firestore_DataSource", menuName = "[ LumosLib ]/SO/Data Source/Firestore")]
     public class FirestoreDataSource : BaseDataSource
     {
         private FirebaseManager Manager

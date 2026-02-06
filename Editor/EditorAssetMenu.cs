@@ -7,7 +7,7 @@ namespace LumosLib.Firebase.Editor
         #region >--------------------------------------------------- SO
 
         
-        [MenuItem("Assets/Create/Prefab/Manager/Firebase", false, int.MinValue)]
+        [MenuItem("Assets/Create/[ LumosLib ]/Prefab/Manager/Firebase", false, int.MinValue)]
         public static void CreateFirebaseManager()
         {
             LumosLib.Editor.EditorAssetMenu.CreatePrefab<FirebaseManager>();
