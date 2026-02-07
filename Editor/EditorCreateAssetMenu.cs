@@ -2,15 +2,15 @@
 
 namespace LumosLib.Firebase.Editor
 {
-    public static class EditorAssetMenu
+    public static class EditorCreateAssetMenu
     {
         #region >--------------------------------------------------- SO
 
         
-        [MenuItem("Assets/Create/[ LumosLib ]/Prefab/Manager/Firebase", false, int.MinValue)]
+        [MenuItem("Assets/Create/[ LumosLib ]/Prefabs/Manager/Firebase", false, int.MinValue)]
         public static void CreateFirebaseManager()
         {
-            LumosLib.Editor.EditorAssetMenu.CreatePrefab<FirebaseManager>();
+            LumosLib.Editor.EditorCreateAssetMenu.CreatePrefab<FirebaseManager>();
         }
         
         #endregion

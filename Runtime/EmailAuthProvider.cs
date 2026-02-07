@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace LumosLib.Firebase
 {
-    [CreateAssetMenu(menuName = "[ LumosLib ]/SO/Auth Provider/Firebase/Email", fileName = "Firebase_EmailAuthProvider")]
+    [CreateAssetMenu(menuName = "[ LumosLib ]/Scriptable Objects/Auth Provider/Firebase/Email", fileName = "Firebase_EmailAuthProvider")]
     public class EmailAuthProvider : BaseAuthProvider
     {
         [field: SerializeField] public string Email { get; private set; }
