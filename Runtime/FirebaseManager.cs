@@ -8,24 +8,12 @@ namespace LumosLib.Firebase
 {
     public class FirebaseManager : MonoBehaviour, IPreInitializable, IFirebaseManager
     {
-        #region >--------------------------------------------------- PROPERTIES
-
+        [SerializeField] private BaseAuthProvider[] firebaseAuthProvider;
         
         public FirebaseUser User { get; private set; }
         public FirebaseAuth Auth { get; private set; }
         public FirebaseFirestore DB { get; private set; }
         
-
-        #endregion
-        #region >--------------------------------------------------- FIELD
-        
-        
-        [SerializeField] private BaseAuthProvider[] firebaseAuthProvider;
-        
-        
-        #endregion
-        #region >--------------------------------------------------- INIT
-     
         
         public async UniTask<bool> InitAsync()
         {
@@ -42,11 +30,6 @@ namespace LumosLib.Firebase
             GlobalService.Register((IFirebaseManager)this);
             return await UniTask.FromResult(true);
         }
-        
-        
-        #endregion
-        #region >--------------------------------------------------- GET & SET
-
 
         public BaseAuthProvider GetAuthProvider<T>() where T : BaseAuthProvider
         {
@@ -65,9 +48,6 @@ namespace LumosLib.Firebase
         {
             User = user;
         }
-        
-
-        #endregion
     }
 }
 
