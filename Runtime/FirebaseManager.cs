@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using Firebase;
 using Firebase.Auth;
@@ -6,7 +7,7 @@ using UnityEngine;
 
 namespace LumosLib.Firebase
 {
-    public class FirebaseManager : MonoBehaviour, IPreInitializable, IFirebaseManager
+    public class FirebaseManager : MonoBehaviour, IFirebaseManager, IPreInitializable
     {
         [SerializeField] private BaseAuthProvider[] firebaseAuthProvider;
         
@@ -14,23 +15,31 @@ namespace LumosLib.Firebase
         public FirebaseAuth Auth { get; private set; }
         public FirebaseFirestore DB { get; private set; }
         
-        
-        public async UniTask<bool> InitAsync()
+        public Type RegisterType => typeof(FirebaseManager);
+
+
+        private void Awake()
+        {
+            Services.Register<IFirebaseManager>(this);
+        }
+
+
+        public async UniTask<bool> InitAsync(PreInitContext ctx)
         {
             var status = await FirebaseApp.CheckAndFixDependenciesAsync();
             if (status != DependencyStatus.Available)
             {
                 Debug.LogError($"Firebase dependency error: {status}");
-                return await UniTask.FromResult(false);
+                return false;
             }
             
             Auth = FirebaseAuth.DefaultInstance;
             DB = FirebaseFirestore.DefaultInstance;
 
-            GlobalService.Register((IFirebaseManager)this);
-            return await UniTask.FromResult(true);
+            return true;
         }
 
+        
         public BaseAuthProvider GetAuthProvider<T>() where T : BaseAuthProvider
         {
             foreach (var provider in firebaseAuthProvider)
@@ -44,6 +53,7 @@ namespace LumosLib.Firebase
             return null;
         }
 
+        
         public void SetUser(FirebaseUser user)
         {
             User = user;

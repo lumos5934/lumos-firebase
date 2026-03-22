@@ -13,7 +13,7 @@ namespace LumosLib.Firebase
             {
                 if (_manager == null)
                 {
-                    _manager = GlobalService.Get<IFirebaseManager>() as FirebaseManager;
+                    _manager = Services.Get<IFirebaseManager>() as FirebaseManager;
                 }
                 
                 return _manager;

@@ -37,6 +37,8 @@ namespace LumosLib.Firebase
                         return user;
                     }
                 }
+                
+                throw e;
             }
         
             return user;
