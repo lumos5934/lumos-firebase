@@ -15,8 +15,6 @@ namespace LumosLib.Firebase
         public FirebaseAuth Auth { get; private set; }
         public FirebaseFirestore DB { get; private set; }
         
-        public Type RegisterType => typeof(FirebaseManager);
-
 
         private void Awake()
         {
