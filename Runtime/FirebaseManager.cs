@@ -5,7 +5,7 @@ using Firebase.Auth;
 using Firebase.Firestore;
 using UnityEngine;
 
-namespace LumosLib.Firebase
+namespace LLib.Firebase
 {
     public class FirebaseManager : MonoBehaviour, IFirebaseManager, IPreInitializable
     {

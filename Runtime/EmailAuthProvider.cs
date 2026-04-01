@@ -3,7 +3,7 @@ using Firebase;
 using Firebase.Auth;
 using UnityEngine;
 
-namespace LumosLib.Firebase
+namespace LLib.Firebase
 {
     [CreateAssetMenu(menuName = "[ LumosLib ]/Scriptable Objects/Auth Provider/Firebase/Email", fileName = "Firebase_EmailAuthProvider")]
     public class EmailAuthProvider : BaseAuthProvider
