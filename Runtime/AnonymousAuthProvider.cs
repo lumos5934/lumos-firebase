@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LLib.Firebase
 {
-    [CreateAssetMenu(menuName = "[ LumosLib ]/Scriptable Objects/Auth Provider/Firebase/Anonymous", fileName = "Firebase_AnonymousAuthProvider")]
+    [CreateAssetMenu(menuName = "[ LLib ]/Scriptable Objects/Auth Provider/Firebase/Anonymous", fileName = "Firebase_AnonymousAuthProvider")]
     public class AnonymousAuthProvider : BaseAuthProvider
     {
         protected override async UniTask<FirebaseUser> GetSignInUserAsync()
