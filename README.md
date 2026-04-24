@@ -1,5 +1,5 @@
 ### ℹ️의존성
-* [ lumos-core ](https://github.com/lumos5934/lumos-core)
+* [ LLib ](https://github.com/lumos5934/lumos-core)
 
 
 <br>
