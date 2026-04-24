@@ -1,7 +1,6 @@
 ### ℹ️의존성
 * [ lumos-core ](https://github.com/lumos5934/lumos-core)
-* [ UniTask ](https://github.com/Cysharp/UniTask?tab=readme-ov-file#upm-package)
-* [ Tri-Inspector ](https://github.com/codewriter-packages/Tri-Inspector?tab=readme-ov-file)
+
 
 <br>
 <br>
